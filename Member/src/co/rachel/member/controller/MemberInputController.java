@@ -47,7 +47,7 @@ public class MemberInputController extends HttpServlet {
 		int n = dao.insert(vo);
 		String viewPage;
 		if(n!=0) {
-			response.sendRedirect("jsp/registerResult.jsp");
+			response.sendRedirect("jsp/member/registerResult.jsp");
 			System.out.println("등록되었습니당");
 			
 					

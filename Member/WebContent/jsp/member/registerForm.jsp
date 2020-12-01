@@ -16,10 +16,10 @@
 					<table>
 						<tr>
 							<th>아이디</th>
-							<td><input type="text" id="rid" name="rid" size="10" onkeydown="inputIdChk()" required> 
-								<input type="button" value="중복확인"
-								onClick="openIdChk(1)" size="5"> <input type="hidden"
-								name="idDuplication" value="idUncheck"></td>
+							<td><img src="">
+								<input type="text" id="rid" name="rid" size="10" onkeydown="inputIdChk()" required> 
+								<input type="button" value="중복확인" onClick="openIdChk(1)" size="5"> 
+								<input type="hidden" name="idDuplication" value="idUncheck"></td>
 						</tr>
 						<tr>
 							<th>이 름</th>
@@ -89,8 +89,11 @@
 		if (document.frm.idDuplication.value !="idCheck") {
 			alert("아이디 중복 체크를 해주세요");
 			return false;
-		}
-		else {
+		}else if(document.frm.rpw1.value != document.frm.rpw2.value) {
+			alert("재입력된 비밀번호가 일치하기 않습니다.");
+			return false;
+			
+		}else {
 				document.frm.submit();
 				alert("등록되었습니다.");
 			}	
@@ -109,6 +112,7 @@
 
 	function inputIdChk() {
 		document.frm.idDuplication.value = "idUncheck";
+		
 	}
 </script>
 

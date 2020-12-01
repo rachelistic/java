@@ -19,12 +19,12 @@
 					<table>
 						<tr>
 							<th>아이디</th>
-							<td><input type="text" id="mid" name="mid" size="20"></td>
+							<td><input type="text" id="mid" name="mid" size="20" required></td>
 						</tr>
 
 						<tr>
 							<th>비밀번호</th>
-							<td><input type="text" id="mpw" name="mpw" size="20"></td>
+							<td><input type="text" id="mpw" name="mpw" size="20" required></td>
 						</tr>
 					</table>
 					<br>
