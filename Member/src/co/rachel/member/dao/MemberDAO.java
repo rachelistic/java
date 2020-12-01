@@ -130,10 +130,10 @@ public class MemberDAO {
 			psmt.setDate(7, vo.getBirthDay());
 			psmt.setNString(8, vo.getEmail());
 			n=psmt.executeUpdate();
-			System.out.println("가입완료1");
+			System.out.println("가입완료");
 		} catch (Exception e) {
 			e.printStackTrace();	
-			System.out.println("가입완료2");
+			System.out.println("가입실패");
 		}finally{
 			close();
 		}
