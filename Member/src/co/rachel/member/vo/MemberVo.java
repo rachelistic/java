@@ -21,8 +21,9 @@ public class MemberVo {
 		return memberId;
 	}
 
-	public void setMemberId(String memberId) {
+	public void setMemberId(String memberId) {	
 		this.memberId = memberId;
+	
 	}
 
 	public String getMemberName() {

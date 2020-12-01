@@ -37,7 +37,11 @@ public class MemberDAO {
 
 	private final String SELECT_ALL = "SELECT * FROM MEMBER";
 	private final String MEMBERLOGIN = "SELECT * FROM MEMBER WHERE MEMBERID=? AND PASSWORD =?";
-
+	private final String INSERT = "INSERT INTO MEMBER(MEMBERID,MEMBERNAME,PASSWORD,MEMBERAUTH,GENDER,MEMBERPOINT,BIRTHDAY,EMAIL)"
+			 		+ "VALUES(?,?,?,?,?,?,?,?)";
+	private final String CHECKID = "SELECT * FROM MEMBER WHERE MEMBERID=?";
+	
+	
 	private void close() {
 		try {
 			if (rs != null)
@@ -86,6 +90,7 @@ public class MemberDAO {
 	}
 
 	public MemberVo memberLoginCheck(MemberVo vo) {// login check
+		
 		try {
 			psmt = conn.prepareStatement(MEMBERLOGIN);
 			psmt.setString(1, vo.getMemberId());
@@ -114,6 +119,24 @@ public class MemberDAO {
 
 	public int insert(MemberVo vo) {
 		int n = 0;
+		try { 
+			psmt = conn.prepareStatement(INSERT);
+			psmt.setString(1, vo.getMemberId());
+			psmt.setString(2, vo.getMemberName());
+			psmt.setString(3, vo.getPassword());
+			psmt.setString(4, vo.getMemberAuth());
+			psmt.setString(5, vo.getGender());
+			psmt.setInt(6, vo.getMemberPoint());
+			psmt.setDate(7, vo.getBirthDay());
+			psmt.setNString(8, vo.getEmail());
+			n=psmt.executeUpdate();
+			System.out.println("가입완료1");
+		} catch (Exception e) {
+			e.printStackTrace();	
+			System.out.println("가입완료2");
+		}finally{
+			close();
+		}
 		return n;
 	}
 
@@ -124,6 +147,24 @@ public class MemberDAO {
 
 	public int delete(MemberVo vo) {
 		int n = 0;
+		return n;
+	}
+
+	public int checkId(MemberVo vo) {
+		
+		int n = 0;
+		
+		try {			
+			psmt = conn.prepareStatement(CHECKID);
+			psmt.setString(1, vo.getMemberId());
+			n = psmt.executeUpdate();
+					
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
 		return n;
 	}
 

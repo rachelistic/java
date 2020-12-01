@@ -22,7 +22,7 @@ th {
 <body>
 	<div style="padding: 20px;">
 
-		<h1>목 록</h1>
+		
 
 
 <!-- 		<div id="searchForm" align="right" style="padding-right: 0%;">
@@ -41,9 +41,10 @@ th {
  -->
 
 
-
+		<div align="center">
+		<h1>목 록</h1>
 		<br>
-		<table border=1 style="width: 100%">
+		<table border=1 style="width: 80%">
 			<tr>
 				<th>아이디</th>
 				<th>이름</th>
@@ -54,7 +55,7 @@ th {
 				<th>생년월일</th>
 				<th>이메일</th>
 			</tr>
-			<!-- 수정이 필요한 부분 forEach 구문 사용해서 반복 처리 필요 -->
+			<!-- 수정하기!  -->
 			<c:forEach var="vo" items="${list }">
 				<tr
 					onClick="location.href='/Member/MemberRead.do?id=${vo.memberId}'">
@@ -68,6 +69,17 @@ th {
 					<td width="200px">${vo.email }</td>
 			</c:forEach>
 		</table>
+		</div>
+		<br><br>
+		<div align="center">
+		<form id="frmm" name="frmm" method="post" action="">
+		<input type="hidden" id="id" name="id" value="${vo.borderId}">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<!-- 아까 히든 말들어준데어데? -->
+		<button type ="submit" onClick='formSubmit("1")'>계정 만들기</button>&nbsp;&nbsp;&nbsp;
+		<button type ="submit" onClick='formSubmit("2")'>계정 삭제</button>&nbsp;&nbsp;&nbsp;
+		</form>
+		</div>	
 		<br>
 
 
@@ -75,4 +87,19 @@ th {
 	</div>
 	
 </body>
+
+
+<script type="text/javascript">
+
+function formSubmit(n){
+	if(n=="1"){
+		frmm.action="/Member/BorderSearch.do";
+		
+	}else if(n=="2"){
+		frmm.action="/Member/BorderDel.do";
+		}
+ }
+ 
+</script>
+
 </html>

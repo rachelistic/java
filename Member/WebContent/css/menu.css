@@ -8,7 +8,7 @@ body {
 width:100%;
 list-style:none;
 height:50px;
-padding:4px 1px;
+padding:0px 1px;
 margin:0;
 background:#4056A1;}
 
@@ -16,7 +16,7 @@ background:#4056A1;}
 width:100px;
 float:left;
 position:relative;
-margin:5px 30px;
+margin:0px 30px;
 padding:0;
 background:#4056A1;
 }
@@ -26,7 +26,7 @@ display:block;
 font-family: 'Nanum Pen Script', cursive;
 front-weight:bold;
 font-size:23px;
-padding:5px 5px;
+padding:0px 5px;
 margin:0;
 color:#fff;
 margin:0;
@@ -38,7 +38,7 @@ text-shadow:0 1px 1px rgba(0,0,0,0.3);
 background:#F13C20;
 color:white;
 margin:0;
-padding:5px;
+padding:0px;
 }
 
 #nav ul{

@@ -1,16 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<jsp:include page="../menu/menu.jsp"/>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<jsp:include page="../menu/menu.jsp" />
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>RegisterResult</title>
 </head>
 <body>
 	<div align="center">
-		<div>
-			<h1>로 그 인</h1>
+		<h2>성공적으로 가입되었습니다.</h2>
+		<br>
+			<h2>&ensp;&ensp;  로그인하기</h2>
 			<div>
 				<form id="frm" name="frm" action="/Member/Login.do" method="post">
 					<table>
@@ -33,7 +36,6 @@
 				계정이 없나요? <a href="registerForm.jsp">회원가입하기</a>
 			</div>
 		</div>
-	</div>
 
 </body>
 </html>
