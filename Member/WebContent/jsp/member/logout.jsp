@@ -10,7 +10,7 @@
 </head>
 <body>
 <div align="center">
-<h1>로그아웃 되었습니다. </h1>
+<h2>로그아웃 되었습니다. </h2>
 </div>
 </body>
 </html>

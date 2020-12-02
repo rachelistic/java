@@ -17,8 +17,10 @@
 <body>
 
 <div align="center">
-<h1>HAMA 다이어리</h1></div>
-	<ul id="nav" >
+
+<h1 style="font-family:'Nanum Pen Script', cursive; font-size:4rem;">HAMA 다이어리</h1></div>
+
+	<ul id="nav">
 	
 		<c:if test="${id eq null}">
 		<li><a href="/Member/jsp/member/loginForm.jsp">로그인</a></li>

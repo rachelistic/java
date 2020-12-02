@@ -76,7 +76,7 @@ public class NoticeDao {
 	public NoticeVo select(NoticeVo vo) {
 		return vo;
 	}
-	public NoticeVo insert(NoticeVo vo) {
+	public int insert(NoticeVo vo) {
 		int n = 0;
 		
 		try {
@@ -94,11 +94,14 @@ public class NoticeDao {
 		
 		return n;
 	}
+	
+	
 	public NoticeVo update(NoticeVo vo) {
 		int n = 0;
 		
 		return n;
 	}
+	
 	public NoticeVo delete(NoticeVo vo) {
 		int n = 0;
 		

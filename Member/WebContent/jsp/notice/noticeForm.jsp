@@ -15,14 +15,14 @@
 		<div>
 			<form id="frm" name="frm" action="/Member/NoticeInsert.do" method="post"
 				enctype="multipart/form-data">
-				<table border=1 style="text-align:center">
+				<table >
 					<tr>
 						<td>제목</td>
-						<td><input type="text" id="title" name="title" size=100%; style=""></td>						
+						<td><input type="text" id="title" name="title" size=85%; style=""></td>						
 					</tr>
 					<tr>
 						<td>내용</td>
-						<td><textarea rows="10" cols="102%" id="content" name="content"></textarea></td>						
+						<td><textarea rows="10" cols="100%" id="content" name="content"></textarea></td>						
 					</tr>
 					<tr>
 						<td>첨부파일</td>

@@ -36,35 +36,42 @@ public class NoticeInsert extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request.setCharacterEncoding("utf-8");
-		NoticeDao dao = new NoticeDao();
-		NoticeVo vo = new NoticeVo();
-		
-		HttpSession session = request.getSession();
-		vo.setNoticeWriter((String) session.getAttribute("name"));
-		//vo.setNoticeWriter(session.getAttribute("auth"));
-		vo.setNoticeTitle(request.getParameter("title"));
-		vo.setNoticeContent(request.getParameter("content"));
-		//파일경로
-		String applicationPath = request.getServletContext().getRealPath("/");
-		String uploadFilePath = applicationPath + UPLOAD_DIR; //"uploadFile"
-		
-		System.out.println(" LOG :: [파일 저장 경로] :: " + uploadFilePath);
-		File fileSaveDir = new File(uploadFilePath);
-		
-		String fileName = null;
-        //Get all the parts from request and write it to the file on server
-        for (Part part : request.getParts()) {
-            fileName = getFileName(part);
-            System.out.println(" LOG :: [ 업로드 파일 경로 ] :: " + uploadFilePath + File.separator + fileName);
-            part.write(uploadFilePath + File.separator + fileName);
-        }
-        request.setAttribute("fileName", fileName);
-        getServletContext().getRequestDispatcher("/response.jsp").forward(request, response);
-	}
-					
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+         // TODO Auto-generated method stub
+         request.setCharacterEncoding("utf-8");
+         NoticeDao dao = new NoticeDao();
+         NoticeVo vo = new NoticeVo();
+
+         HttpSession session = request.getSession();
+         
+         // 서버의 실제 경로
+         String applicationPath = request.getServletContext().getRealPath("/");
+         String uploadFilePath = applicationPath + UPLOAD_DIR;// "uploadFile"
+
+         String fileName = null;
+         
+         for (Part part : request.getParts()) {
+            String contentDisp = part.getHeader("content-disposition");
+            String[] tokens = contentDisp.split(";");
+            for (String str : tokens) {
+               if (str.trim().startsWith("filename")) {
+               fileName = str.substring(str.indexOf("=")+2, str.length()-1);
+               part.write(uploadFilePath + File.separator + fileName);
+               } 
+            }
+         }
+         vo.setNoticeWriter((String) session.getAttribute("name"));
+         vo.setNoticeTitle(request.getParameter("title"));
+         vo.setNoticeContent(request.getParameter("content"));
+         vo.setNoticeAttach(fileName);
+         int n = dao.insert(vo);//이곳에 돌려줄 페이지 작성
+         if( n != 0) {
+            response.sendRedirect("/Member/NoticeList.do");
+         } else {
+            
+         }
+      }
 		
 
 	private String getFileName(Part part) {  String contentDisp = part.getHeader("content-disposition");

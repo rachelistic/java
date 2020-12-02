@@ -102,8 +102,7 @@
 
 	function openIdChk(n) {
 		if (n == 1) {
-			window
-					.open("idCheck.jsp", "idcheck",
+			window.open("idCheck.jsp", "idcheck",
 							"width=600, height=300,top=300px,left=400px, scrollbars=no");
 
 		}

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body {}background:#ffcc00;}
+body {background:#white;}
 #nav {
 width:100%;
 list-style:none;
@@ -8,6 +8,7 @@ height:60px;
 padding:0px 0px;
 margin:auto;
 background:#4056A1;
+
 }
 
 #nav li{
@@ -17,6 +18,7 @@ position:relative;
 margin:auto;
 padding:5px;
 background:#4056A1;
+
 }
 
 #nav li a{
@@ -33,10 +35,11 @@ text-decoration:none;
 text-shadow:0 1px 1px rgba(0,0,0,0.3);
 }
 #nav li:hover > a {
-background:#F13C20;
+background:#FCCF17;
 padding:10px 5px;
-color:white;
+color:black;
 margin:0;
+
 
 }
 
@@ -48,13 +51,13 @@ margin-left: auto;
 margin-right: auto;
 padding:0;
 position:absolute;
-top:49px;
-background:#D79922;
+top:41px;
 text-align:center;
 opacity:0;
 }
 #nav li:hover ul {
 opacity:1;
+
 }
 
 #nav ul li{
@@ -68,6 +71,7 @@ font-size:10px;
 height:35px;
 overflow:visible;
 padding:0;
+
 }
 
 #nav ul a{
@@ -75,9 +79,20 @@ font-weight:normal;
 color:white;}
 
 #nav ul li:hover a{
-background:#D79922;
-font-weight:bold;
+background:#FCCF17;
+color:black;
 }
 
+table tr {height:35px;} 
+table tr input{
+	
+	height:30px;
+	
+}
+form input {
+	font-size:1rem;
+	height:30px;
+}
+h2 {font-family:'Nanum Pen Script', cursive; font-size:3rem;}
 
 

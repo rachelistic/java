@@ -46,7 +46,7 @@ th {
 
 
 		<br>
-		<table border=1 style="width: 100%">
+		<table style="width: 100%">
 			<tr>
 				<th>번호</th>
 				<th>제목</th>
@@ -56,13 +56,13 @@ th {
 			</tr>
 			<!-- 수정이 필요한 부분 forEach 구문 사용해서 반복 처리 필요 -->
 			<c:forEach var="vo" items="${list }">
-				<tr
+				<tr style="text-align:center;"
 					onClick="location.href='/Member/BorderRead.do?id=${vo.borderId}'">
-					<td width="200px">${vo.borderId }</td>
+					<th width="50px">${vo.borderId }</th>
 					<td width="200px">${vo.borderTitle }</td>
-					<td width="200px">${vo.borderWriter }</td>
-					<td width="200px">${vo.borderDate }</td>
-					<td width="200px">${vo.borderHit }</td>
+					<td width="100px" >${vo.borderWriter }</td>
+					<td width="100px" >${vo.borderDate }</td>
+					<td width="80px" >${vo.borderHit }</td>
 			</c:forEach>
 		</table>
 		<br>

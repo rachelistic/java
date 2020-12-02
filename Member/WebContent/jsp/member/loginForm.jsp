@@ -10,17 +10,17 @@
 <body>
 	<div align="center">
 		<div>
-			<h1>로 그 인</h1>
+			<h2>로 그 인</h2>
 			<div>
 				<form id="frm" name="frm" action="/Member/Login.do" method="post">
 					<table>
 						<tr>
-							<th>아이디</th>
+							<th>아 이 디 &ensp;&ensp; </th>
 							<td><input type="text" id="mid" name="mid" size="20" required></td>
 						</tr>
 
 						<tr>
-							<th>비밀번호</th>
+							<th>비밀번호  &ensp;&ensp;</th>
 							<td><input type="text" id="mpw" name="mpw" size="20" required></td>
 						</tr>
 					</table>
