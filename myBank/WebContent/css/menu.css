@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+body {background:#white;}
+#nav {
+width:100%;
+list-style:none;
+height:60px;
+padding:0px 0px;
+margin:auto;
+background:#4056A1;
+
+}
+
+#nav li{
+width:100px;
+float:left;
+position:relative;
+margin:auto;
+padding:5px;
+background:#4056A1;
+
+}
+
+#nav li a{
+text-align:center;
+display:block;
+font-family: 'Nanum Pen Script', cursive;
+front-weight:bold;
+font-size:25px;
+padding:10px 5px;
+margin:auto;
+color:#fff;
+text-decoration:none;
+
+text-shadow:0 1px 1px rgba(0,0,0,0.3);
+}
+#nav li:hover > a {
+background:#FCCF17;
+padding:10px 5px;
+color:black;
+margin:0;
+
+
+}
+
+
+#nav ul{
+width:100px;
+list-style:none;
+margin-left: auto;
+margin-right: auto;
+padding:0;
+position:absolute;
+top:41px;
+text-align:center;
+opacity:0;
+}
+#nav li:hover ul {
+opacity:1;
+
+}
+
+#nav ul li{
+float:none;
+margin:0;
+padding:0;
+font-size:10px;
+}
+
+#nav li:hover ul li{
+height:35px;
+overflow:visible;
+padding:0;
+
+}
+
+#nav ul a{
+font-weight:normal;
+color:white;}
+
+#nav ul li:hover a{
+background:#FCCF17;
+color:black;
+}
+
+table tr {height:35px;} 
+table tr input{
+	
+	height:30px;
+	
+}
+form input {
+	font-size:1rem;
+	height:30px;
+}
+h2 {font-family:'Nanum Pen Script', cursive; font-size:3rem;}
+
+
